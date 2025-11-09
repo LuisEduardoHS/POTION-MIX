@@ -1,0 +1,17 @@
+# Este es un .gitignore esencial para Unity
+
+# Carpetas generadas por Unity
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+
+# Archivos específicos de IDE (Visual Studio / Rider)
+*.sln
+*.csproj
+*.user
+*.userprefs
+.idea/
