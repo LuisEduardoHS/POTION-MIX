@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance;
 
+    public static event System.Action<int> OnPointsUpdated;
+
     public GameObject gameOverPanel;
     public TextMeshProUGUI gameOverText;
     public Button reiniciarButton;
@@ -89,6 +91,8 @@ public class GameManager : MonoBehaviour
     public void SumarPuntos(int puntosASumar)
     {
         puntosTotales += puntosASumar;
-        Debug.Log("Puntos Totales: " + puntosTotales);
+        Debug.Log("Puntos Totales: " + puntosASumar);
+
+        OnPointsUpdated?.Invoke(puntosTotales);
     }
 }

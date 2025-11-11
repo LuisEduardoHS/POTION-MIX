@@ -30,6 +30,7 @@ public class Player : MonoBehaviour
     public bool muerto;
 
     private bool hasThrown = false;
+    private bool jumpPressed = false;
 
     private BoxCollider2D playerCollider;
     private Vector2 originalColliderSize;
@@ -54,67 +55,56 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (!muerto)
-        {
-            // Solo permite movimiento si no está recibiendo daño
-            if (!recibeDamage)
-            {
-                move = Input.GetAxis("Horizontal");
-                isRunning = Input.GetKey(KeyCode.LeftShift); // Shift para correr
-
-                float currentSpeed = isRunning ? runSpeed : speed;
-
-                rb2D.linearVelocity = new Vector2(move * currentSpeed, rb2D.linearVelocity.y);
-
-                // Voltea al personaje según la dirección
-                if (move != 0)
-                    transform.localScale = new Vector3(Mathf.Sign(move), 1, 1);
-
-                // Salto
-                if (Input.GetButtonDown("Jump") && isGrounded)
-                {
-                    rb2D.linearVelocity = new Vector2(rb2D.linearVelocity.x, jumpForce);
-                    crearParticulaSalto();
-                }
-
-                // Agacharse
-                if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
-                {
-                    isCrouching = true;
-                }
-                else
-                {
-                    isCrouching = false;
-                }
-
-                if (isCrouching)
-                {
-                    playerCollider.size = crouchColliderSize;
-                }
-                else
-                {
-                    playerCollider.size = originalColliderSize;
-                }
-
-                if (Input.GetKeyDown(KeyCode.E) && !hasThrown)
-                {
-                    animator.SetTrigger("throw");
-                    //hasThrown = true; // Evita lanzar otra galleta mientras la animación sigue
-                }
-            }
-        }
-        
-
-        // Actualiza la animación de movimiento
         animator.SetFloat("movement", Mathf.Abs(move));
         animator.SetBool("isRunning", isRunning);
         animator.SetBool("isGrounded", isGrounded);
         animator.SetFloat("VerticalVelocity", rb2D.linearVelocity.y);
-        //animator.SetBool("isCrouching", isCrouching);
         animator.SetBool("recibeDamage", recibeDamage);
         animator.SetBool("muerto", muerto);
 
+        if (muerto) return;
+
+        if (!recibeDamage)
+        {
+            move = Input.GetAxis("Horizontal");
+            isRunning = Input.GetKey(KeyCode.LeftShift); // Shift para correr
+
+            if (Input.GetButtonDown("Jump"))
+            {
+                jumpPressed = true;
+            }
+
+            if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+            {
+                isCrouching = true;
+            }
+            else
+            {
+                isCrouching = false;
+            }
+
+            if (isCrouching)
+            {
+                playerCollider.size = crouchColliderSize;
+            }
+            else
+            {
+                playerCollider.size = originalColliderSize;
+            }
+
+            if(Input.GetKeyDown(KeyCode.E) && !hasThrown)
+            {
+                animator.SetTrigger("throw");
+            }
+        }
+        else
+        {
+            move = 0f;
+        }
+
     }
+
+
 
     void LaunchThrowable()
     {
@@ -174,8 +164,13 @@ public class Player : MonoBehaviour
         }
         else
         {
-            Vector2 rebote = new Vector2(transform.position.x - direccion.x, 0.2f).normalized;
-            rb2D.AddForce(rebote * reboteForce, ForceMode2D.Impulse);
+            float horizontalDirection = Mathf.Sign(transform.position.x - direccion.x);
+
+            rb2D.linearVelocity = Vector2.zero;
+
+            Vector2 forceVector = new Vector2(horizontalDirection * (reboteForce * 0.7f), reboteForce);
+
+            rb2D.AddForce(forceVector, ForceMode2D.Impulse);
         }
 
         // Desactiva el estado de recibeDamage después de un tiempo corto
@@ -191,5 +186,30 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, groundLayer);
+
+        if (muerto) return;
+
+        if (recibeDamage)
+        {
+            return;
+        }
+
+        // Aplicamos la fisica del movimiento
+        float currentSpeed = isRunning ? runSpeed : speed;
+        rb2D.linearVelocity = new Vector2(move * currentSpeed, rb2D.linearVelocity.y);
+
+        if ( move != 0 )
+        {
+            transform.localScale = new Vector3(Mathf.Sign(move), 1, 1);
+        }
+
+        if (jumpPressed && isGrounded)
+        {
+            rb2D.linearVelocity = new Vector2(rb2D.linearVelocity.x, jumpForce);
+            crearParticulaSalto();
+        }
+
+        jumpPressed = false;
+
     }
 }

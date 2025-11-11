@@ -6,9 +6,25 @@ public class HUD : MonoBehaviour
     public GameManager gameManager;
     public TextMeshProUGUI puntos;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
+        if (gameManager == null)
+        {
+            gameManager = GameManager.instance;
+        }
+
+        GameManager.OnPointsUpdated += ActualizarTextoPuntos;
+
         puntos.text = gameManager.PuntosTotales.ToString();
+    }
+
+    private void ActualizarTextoPuntos(int nuevosPuntos)
+    {
+        puntos.text = nuevosPuntos.ToString();
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.OnPointsUpdated -= ActualizarTextoPuntos;
     }
 }
