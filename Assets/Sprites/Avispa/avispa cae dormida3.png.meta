@@ -1,0 +1,793 @@
+fileFormatVersion: 2
+guid: d8e0d88fb13ee774895e0234db748b64
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4476141805982084265
+    second: avispa cae dormida3_0
+  - first:
+      213: 545256709248516005
+    second: avispa cae dormida3_1
+  - first:
+      213: -5205796666391506945
+    second: avispa cae dormida3_2
+  - first:
+      213: -3363925120191857490
+    second: avispa cae dormida3_3
+  - first:
+      213: -7712286720514092917
+    second: avispa cae dormida3_4
+  - first:
+      213: 819724464653852670
+    second: avispa cae dormida3_5
+  - first:
+      213: -6712958881322343824
+    second: avispa cae dormida3_6
+  - first:
+      213: 4792528935081661406
+    second: avispa cae dormida3_7
+  - first:
+      213: -4387825446248319685
+    second: avispa cae dormida3_8
+  - first:
+      213: -5717451176070528037
+    second: avispa cae dormida3_9
+  - first:
+      213: -8242809561650582231
+    second: avispa cae dormida3_10
+  - first:
+      213: -7748080097433381817
+    second: avispa cae dormida3_11
+  - first:
+      213: 8237725652712741294
+    second: avispa cae dormida3_12
+  - first:
+      213: 1036194856967162546
+    second: avispa cae dormida3_13
+  - first:
+      213: 693283715352542638
+    second: avispa cae dormida3_14
+  - first:
+      213: 5094759469543449932
+    second: avispa cae dormida3_15
+  - first:
+      213: -4519419457052256037
+    second: avispa cae dormida3_16
+  - first:
+      213: 7711478037943577431
+    second: avispa cae dormida3_17
+  - first:
+      213: -3117403525678639844
+    second: avispa cae dormida3_18
+  - first:
+      213: 165729181810791438
+    second: avispa cae dormida3_19
+  - first:
+      213: 5398778518696565887
+    second: avispa cae dormida3_20
+  - first:
+      213: 3802950836636564541
+    second: avispa cae dormida3_21
+  - first:
+      213: -5925597378788300763
+    second: avispa cae dormida3_22
+  - first:
+      213: -3861490377485513162
+    second: avispa cae dormida3_23
+  - first:
+      213: -6499652347425104074
+    second: avispa cae dormida3_24
+  - first:
+      213: -8680141767426689658
+    second: avispa cae dormida3_25
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: avispa cae dormida3_0
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 41
+        width: 73
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 753992a3ebc81e1c0800000000000000
+      internalID: -4476141805982084265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avispa cae dormida3_1
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 51
+        width: 82
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5aff7229614219700800000000000000
+      internalID: 545256709248516005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avispa cae dormida3_2
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 49
+        width: 78
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fff42de638b41c7b0800000000000000
+      internalID: -5205796666391506945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avispa cae dormida3_3
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 47
+        width: 82
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eac73ff0defe051d0800000000000000
+      internalID: -3363925120191857490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avispa cae dormida3_4
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 43
+        width: 77
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b809bc1d61478f490800000000000000
+      internalID: -7712286720514092917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avispa cae dormida3_5
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 36
+        width: 76
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: effd369be0f306b00800000000000000
+      internalID: 819724464653852670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avispa cae dormida3_6
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 34
+        width: 73
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0726af6d677c6d2a0800000000000000
+      internalID: -6712958881322343824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avispa cae dormida3_7
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 27
+        width: 69
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed3d25facab728240800000000000000
+      internalID: 4792528935081661406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avispa cae dormida3_8
+      rect:
+        serializedVersion: 2
+        x: 764
+        y: 11
+        width: 69
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b35f2fb11005b13c0800000000000000
+      internalID: -4387825446248319685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avispa cae dormida3_9
+      rect:
+        serializedVersion: 2
+        x: 853
+        y: 2
+        width: 69
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd34dad927887a0b0800000000000000
+      internalID: -5717451176070528037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avispa cae dormida3_10
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 0
+        width: 70
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92daf9e3068ab9d80800000000000000
+      internalID: -8242809561650582231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avispa cae dormida3_11
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 0
+        width: 74
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7449535d33a497490800000000000000
+      internalID: -7748080097433381817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avispa cae dormida3_12
+      rect:
+        serializedVersion: 2
+        x: 1133
+        y: 0
+        width: 74
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea9d017f5d7425270800000000000000
+      internalID: 8237725652712741294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avispa cae dormida3_13
+      rect:
+        serializedVersion: 2
+        x: 1227
+        y: 0
+        width: 74
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ba4d9f7bbd416e00800000000000000
+      internalID: 1036194856967162546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avispa cae dormida3_14
+      rect:
+        serializedVersion: 2
+        x: 1321
+        y: 0
+        width: 74
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eadb62eadd90f9900800000000000000
+      internalID: 693283715352542638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avispa cae dormida3_15
+      rect:
+        serializedVersion: 2
+        x: 1415
+        y: 0
+        width: 74
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c45e13e8eb834b640800000000000000
+      internalID: 5094759469543449932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avispa cae dormida3_16
+      rect:
+        serializedVersion: 2
+        x: 1509
+        y: 0
+        width: 74
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd8596fd2fbc741c0800000000000000
+      internalID: -4519419457052256037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avispa cae dormida3_17
+      rect:
+        serializedVersion: 2
+        x: 1525
+        y: 37
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75b6ad81b6ca40b60800000000000000
+      internalID: 7711478037943577431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avispa cae dormida3_18
+      rect:
+        serializedVersion: 2
+        x: 1603
+        y: 0
+        width: 74
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c15df569202ccb4d0800000000000000
+      internalID: -3117403525678639844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avispa cae dormida3_19
+      rect:
+        serializedVersion: 2
+        x: 1697
+        y: 0
+        width: 74
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e049fb210d9cc4200800000000000000
+      internalID: 165729181810791438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avispa cae dormida3_20
+      rect:
+        serializedVersion: 2
+        x: 1791
+        y: 0
+        width: 74
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7c1be375705cea40800000000000000
+      internalID: 5398778518696565887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avispa cae dormida3_21
+      rect:
+        serializedVersion: 2
+        x: 1807
+        y: 36
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3c3ff313abc6c430800000000000000
+      internalID: 3802950836636564541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avispa cae dormida3_22
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 23
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5286653449c04cda0800000000000000
+      internalID: -5925597378788300763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avispa cae dormida3_23
+      rect:
+        serializedVersion: 2
+        x: 1132
+        y: 23
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63e0362f5fa396ac0800000000000000
+      internalID: -3861490377485513162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avispa cae dormida3_24
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 24
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63f513c60a89cc5a0800000000000000
+      internalID: -6499652347425104074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avispa cae dormida3_25
+      rect:
+        serializedVersion: 2
+        x: 1414
+        y: 24
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68530884d01f98780800000000000000
+      internalID: -8680141767426689658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      avispa cae dormida3_0: -4476141805982084265
+      avispa cae dormida3_1: 545256709248516005
+      avispa cae dormida3_10: -8242809561650582231
+      avispa cae dormida3_11: -7748080097433381817
+      avispa cae dormida3_12: 8237725652712741294
+      avispa cae dormida3_13: 1036194856967162546
+      avispa cae dormida3_14: 693283715352542638
+      avispa cae dormida3_15: 5094759469543449932
+      avispa cae dormida3_16: -4519419457052256037
+      avispa cae dormida3_17: 7711478037943577431
+      avispa cae dormida3_18: -3117403525678639844
+      avispa cae dormida3_19: 165729181810791438
+      avispa cae dormida3_2: -5205796666391506945
+      avispa cae dormida3_20: 5398778518696565887
+      avispa cae dormida3_21: 3802950836636564541
+      avispa cae dormida3_22: -5925597378788300763
+      avispa cae dormida3_23: -3861490377485513162
+      avispa cae dormida3_24: -6499652347425104074
+      avispa cae dormida3_25: -8680141767426689658
+      avispa cae dormida3_3: -3363925120191857490
+      avispa cae dormida3_4: -7712286720514092917
+      avispa cae dormida3_5: 819724464653852670
+      avispa cae dormida3_6: -6712958881322343824
+      avispa cae dormida3_7: 4792528935081661406
+      avispa cae dormida3_8: -4387825446248319685
+      avispa cae dormida3_9: -5717451176070528037
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
