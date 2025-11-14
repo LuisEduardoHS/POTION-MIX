@@ -15,3 +15,7 @@
 *.user
 *.userprefs
 .idea/
+
+# Ignorar caché de Visual Studio
+.vs/
+[Vv]s/
