@@ -41,6 +41,13 @@ public class Player : MonoBehaviour
     public int throwableCount = 5;     // cuántos puede usar
     public float launchSpeed = 7f;
 
+    [Header("Throw Settings")]
+    [Range(0f, 90f)]
+    public float throwLaunchAngle = 30f;
+
+    public float throwCooldown = 1.0f; // 1 segundo de espera
+    private float lastThrowTime = -10f;
+
     private Animator animator;
 
     void Start()
@@ -92,8 +99,9 @@ public class Player : MonoBehaviour
                 playerCollider.size = originalColliderSize;
             }
 
-            if(Input.GetKeyDown(KeyCode.E) && !hasThrown)
+            if (Input.GetKeyDown(KeyCode.E) && !hasThrown && Time.time > lastThrowTime + throwCooldown)
             {
+                lastThrowTime = Time.time; // Reinicia el cronómetro
                 animator.SetTrigger("throw");
             }
         }
@@ -115,8 +123,7 @@ public class Player : MonoBehaviour
         // Dirección según donde mira el jugador
         Vector2 dir = transform.localScale.x > 0 ? Vector2.right : Vector2.left;
 
-        // Lanzamiento: pasas dirección y el jugador (this.gameObject)
-        t.Launch(dir, this.gameObject); // opcional: usa el ángulo por defecto 30f
+        t.Launch(dir, this.gameObject, throwLaunchAngle);
     }
 
     public void SpawnThrowable()
@@ -125,7 +132,7 @@ public class Player : MonoBehaviour
 
         GameObject obj = Instantiate(throwablePrefab, launchPoint.position, Quaternion.identity);
         Vector2 dir = transform.localScale.x > 0 ? Vector2.right : Vector2.left;
-        obj.GetComponent<ThrowableObject>().Launch(dir, this.gameObject);
+        obj.GetComponent<ThrowableObject>().Launch(dir, this.gameObject, throwLaunchAngle);
 
         throwableCount--;
         hasThrown = true; // Marca que ya lanzamos esta animación
