@@ -12,7 +12,10 @@ public class GameManager : MonoBehaviour
 
     public static event System.Action<int> OnPointsUpdated;
 
+    [Header("Paneles de UI")]
     public GameObject gameOverPanel;
+    public GameObject settingsPanel;
+
     public TextMeshProUGUI gameOverText;
     public Button reiniciarButton;
     public Button menuButton;
@@ -41,6 +44,16 @@ public class GameManager : MonoBehaviour
 
         if(menuButton != null)
             menuButton.onClick.AddListener(IrAlMenu);
+
+        SettingsMenu.OnSettingsClosed += ReShowGameOverPanel;
+        if (settingsPanel != null)
+            settingsPanel.SetActive(false);
+    }
+
+    private void OnDestroy()
+    {
+        // Desuscribirse del evento para evitar referencias colgantes
+        SettingsMenu.OnSettingsClosed -= ReShowGameOverPanel;
     }
 
     private void Update()
@@ -94,5 +107,20 @@ public class GameManager : MonoBehaviour
         Debug.Log("Puntos Totales: " + puntosASumar);
 
         OnPointsUpdated?.Invoke(puntosTotales);
+    }
+
+    public void AbrirAjustes_GameOver()
+    {
+        if (gameOverPanel != null) gameOverPanel.SetActive(false);
+        if (settingsPanel != null) settingsPanel.SetActive(true);
+    }
+
+    private void ReShowGameOverPanel()
+    {
+        // Si el juego terminó, re-muestra el panel de Game Over
+        if (gameOverActivo)
+        {
+            if (gameOverPanel != null) gameOverPanel.SetActive(true);
+        }
     }
 }
