@@ -9,11 +9,17 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 6810f5028150cb444801edf84da14792
   - enabled: 1
+    path: Assets/Scenes/Cabana_Intro.unity
+    guid: d0e94974d18ac8844b3d30f16efc8ca8
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level2.unity
     guid: 174abf938daf6c34ebd06183f8f1a731
+  - enabled: 1
+    path: Assets/Scenes/Volcan_Nivel.unity
+    guid: e7152a2c3451ec04aa8240dfd7b1f4bf
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

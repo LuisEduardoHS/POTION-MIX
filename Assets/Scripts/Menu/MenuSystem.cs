@@ -21,7 +21,7 @@ public class MenuSystem : MonoBehaviour
     public void Jugar()
     {
         // Carga la escena del juego
-        SceneManager.LoadScene(gameSceneName);
+        SceneTransitionManager.instance.LoadSceneWithFade(gameSceneName);
     }
 
     public void SalirDelJuego()

@@ -2,10 +2,15 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public event System.Action<float> OnImmunityTick; // Envía el tiempo restante (un float)
+    public event System.Action OnImmunityStarted;    // Avisa que empezó
+    public event System.Action OnImmunityEnded;      // Avisa que terminó
+
     public ParticleSystem particulaSalto;
 
     public float speed = 5f;
-    public int vidas = 3;
+    public int vidas = 5;
+    private int maxVidas;
 
     public float runSpeed = 8f;
     private bool isRunning;
@@ -21,8 +26,10 @@ public class Player : MonoBehaviour
     public LayerMask groundLayer;
 
     private bool isCrouching = false;
-
     private bool recibeDamage;
+
+    private bool isImmune = false; // Estado de inmunidad
+    public float immunityDuration = 5f;
 
     private float damageCooldown = 0.5f; // 0.5 segundos de invulnerabilidad
     private float lastDamageTime = -10f;
@@ -56,6 +63,8 @@ public class Player : MonoBehaviour
         animator = GetComponent<Animator>();
         playerCollider = GetComponent<BoxCollider2D>();
 
+        maxVidas = vidas;
+
         originalColliderSize = playerCollider.size;
         crouchColliderSize = new Vector2(originalColliderSize.x, originalColliderSize.y / 2);
     }
@@ -68,6 +77,7 @@ public class Player : MonoBehaviour
         animator.SetFloat("VerticalVelocity", rb2D.linearVelocity.y);
         animator.SetBool("recibeDamage", recibeDamage);
         animator.SetBool("muerto", muerto);
+        animator.SetBool("isCrouching", isCrouching);
 
         if (muerto) return;
 
@@ -151,6 +161,8 @@ public class Player : MonoBehaviour
 
     public void RecibeDamage(Vector2 direccion, int cantDamage)
     {
+        if (isImmune) return; // Si eres inmune, ignora todo el daño.
+
         if (Time.time - lastDamageTime < damageCooldown) return; // Evita daño repetido
         lastDamageTime = Time.time;
 
@@ -218,5 +230,69 @@ public class Player : MonoBehaviour
 
         jumpPressed = false;
 
+    }
+
+    public void ActivateImmunity()
+    {
+        // Si ya eres inmune, no hagas nada (o reinicia el timer, como prefieras)
+        if (isImmune) return;
+
+        Debug.Log("¡Poción de Inmunidad Activada!");
+        StartCoroutine(ImmunityRoutine());
+    }
+
+    private System.Collections.IEnumerator ImmunityRoutine()
+    {
+        // 1. Activa la inmunidad y AVISA a la UI
+        isImmune = true;
+        OnImmunityStarted?.Invoke();
+
+        float timer = immunityDuration; // (ej. 5 segundos)
+
+        // 2. Bucle de cuenta atrás
+        while (timer > 0)
+        {
+            // Transmite el tiempo restante
+            OnImmunityTick?.Invoke(timer);
+
+            // Espera un fotograma
+            yield return null;
+
+            // Resta el tiempo que pasó en ese fotograma
+            timer -= Time.deltaTime;
+        }
+
+        // 3. Desactiva la inmunidad y AVISA a la UI
+        isImmune = false;
+        OnImmunityEnded?.Invoke();
+        Debug.Log("La inmunidad ha terminado.");
+    }
+
+    public void Respawn(Vector3 spawnPosition)
+    {
+        // 1. Mueve al jugador al checkpoint
+        transform.position = spawnPosition;
+
+        // 2. Resetea su estado de física y vida
+        vidas = maxVidas;
+        muerto = false;
+        recibeDamage = false;
+        isImmune = false; // Resetea el buff de inmunidad
+
+        // 3. Reactiva la física y colisiones
+        rb2D.bodyType = RigidbodyType2D.Dynamic;
+        rb2D.linearVelocity = Vector2.zero; // Detiene todo movimiento
+        playerCollider.enabled = true;
+
+        // 4. Resetea los temporizadores
+        lastDamageTime = -10f;
+        lastThrowTime = -10f;
+
+        // 5. Arregla el Animator
+        animator.SetBool("muerto", false);
+        animator.Play("Idle"); // Fuerza al animador a volver al estado "Idle"
+
+        // 6. Resetea la UI de inmunidad (si existe)
+        OnImmunityEnded?.Invoke();
     }
 }

@@ -27,6 +27,9 @@ public class Enemy : MonoBehaviour
     public float attackCooldown = 2.0f;
     private float lastAttackTime = -10f;
 
+    [Header("Drops")]
+    public GameObject itemToDropOnDeath;
+
     void Start()
     {
         Debug.Log("--- ENEMY START ---"); // LOG 1
@@ -190,6 +193,12 @@ public class Enemy : MonoBehaviour
         rb.linearVelocity = Vector2.zero;
         // animator.SetTrigger("muerto"); // Animator está desactivado
         GetComponent<Collider2D>().enabled = false;
+
+        if (itemToDropOnDeath != null)
+        {
+            Instantiate(itemToDropOnDeath, transform.position, Quaternion.identity);
+        }
+
         Destroy(gameObject, 1f);
     }
 
