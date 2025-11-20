@@ -11,6 +11,7 @@ public class Coin : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             gameManager.SumarPuntos(valor);
+            AudioManager.instance.PlaySFX(AudioManager.instance.sfxCoin);
             // Destruye la moneda después de ser recogida
             Destroy(this.gameObject);
         }

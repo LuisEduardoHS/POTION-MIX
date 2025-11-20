@@ -1030,6 +1030,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7347506329053956283, guid: cb69dc080fe48bf43a64dcf67c275404, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7347506329053956283, guid: cb69dc080fe48bf43a64dcf67c275404, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 478e89e6dd624374f9bb521517c4c8c8, type: 3}
+    - target: {fileID: 7347506329053956283, guid: cb69dc080fe48bf43a64dcf67c275404, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7347506329053956283, guid: cb69dc080fe48bf43a64dcf67c275404, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 7254931522953057351, guid: 83121e8dd6616e943bef6adc874d4773, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1340,17 +1356,17 @@ MonoBehaviour:
   m_FillRect: {fileID: 1441694411}
   m_HandleRect: {fileID: 488557696}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 419834553}
         m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
         m_MethodName: SetMusic
-        m_Mode: 4
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1603,8 +1619,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SettingsMenu
   volumeSlider: {fileID: 0}
-  musicSlider: {fileID: 0}
-  brightnessSlider: {fileID: 0}
+  musicSlider: {fileID: 357371447}
+  brightnessSlider: {fileID: 408624201}
 --- !u!114 &419834554
 MonoBehaviour:
   m_ObjectHideFlags: 0

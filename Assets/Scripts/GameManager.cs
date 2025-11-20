@@ -201,5 +201,6 @@ public class GameManager : MonoBehaviour
 
         // Detiene el juego
         Time.timeScale = 0f;
+        AudioManager.instance.PlayMusic(AudioManager.instance.musicVictoria);
     }
 }

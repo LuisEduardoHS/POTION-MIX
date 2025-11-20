@@ -986,17 +986,17 @@ MonoBehaviour:
   m_FillRect: {fileID: 1441694411}
   m_HandleRect: {fileID: 488557696}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 419834553}
         m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
         m_MethodName: SetMusic
-        m_Mode: 4
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1070,8 +1070,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05f25eeaab1881e4081e5cd3c4a68c70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  player: {fileID: 0}
   gameOverPanel: {fileID: 1673647892}
   settingsPanel: {fileID: 419834551}
+  winPanel: {fileID: 0}
   gameOverText: {fileID: 736604749}
   reiniciarButton: {fileID: 696293586}
   menuButton: {fileID: 1607493068}
@@ -1204,10 +1206,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 1297683233}
   m_HandleRect: {fileID: 541521247}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -1278,8 +1280,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SettingsMenu
   volumeSlider: {fileID: 0}
-  musicSlider: {fileID: 0}
-  brightnessSlider: {fileID: 0}
+  musicSlider: {fileID: 357371447}
+  brightnessSlider: {fileID: 408624201}
 --- !u!114 &419834554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4129,8 +4131,6 @@ MonoBehaviour:
   typewriterSpeed: 0.05
   dialogoFinal_Galleta: Suerte Zephyr... Confio en ti.
   tiempoExtraGalleta: 2
-  fadeImage: {fileID: 0}
-  fadeSpeed: 0.5
   proximaEscena: SampleScene
 --- !u!4 &1698339582
 Transform:

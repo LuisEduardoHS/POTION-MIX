@@ -57,11 +57,14 @@ public class Player : MonoBehaviour
 
     private Animator animator;
 
+    private AudioSource footstepSource;
+
     void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         playerCollider = GetComponent<BoxCollider2D>();
+        footstepSource = GetComponent<AudioSource>();
 
         maxVidas = vidas;
 
@@ -78,6 +81,17 @@ public class Player : MonoBehaviour
         animator.SetBool("recibeDamage", recibeDamage);
         animator.SetBool("muerto", muerto);
         animator.SetBool("isCrouching", isCrouching);
+
+        // Si estamos en el suelo Y moviéndonos Y el sonido no está sonando...
+        if (isGrounded && Mathf.Abs(move) > 0.1f && !footstepSource.isPlaying)
+        {
+            footstepSource.Play(); // ...empezar a sonar.
+        }
+        // Si NO estamos en el suelo O estamos quietos Y el sonido SÍ está sonando...
+        else if ((!isGrounded || Mathf.Abs(move) < 0.1f) && footstepSource.isPlaying)
+        {
+            footstepSource.Stop(); // ...dejar de sonar.
+        }
 
         if (muerto) return;
 
@@ -113,6 +127,7 @@ public class Player : MonoBehaviour
             {
                 lastThrowTime = Time.time; // Reinicia el cronómetro
                 animator.SetTrigger("throw");
+                AudioManager.instance.PlaySFX(AudioManager.instance.sfxPlayerThrow);
             }
         }
         else
@@ -164,6 +179,9 @@ public class Player : MonoBehaviour
         if (isImmune) return; // Si eres inmune, ignora todo el daño.
 
         if (Time.time - lastDamageTime < damageCooldown) return; // Evita daño repetido
+
+        AudioManager.instance.PlaySFX(AudioManager.instance.sfxPlayerDamage);
+
         lastDamageTime = Time.time;
 
         recibeDamage = true;
@@ -226,6 +244,7 @@ public class Player : MonoBehaviour
         {
             rb2D.linearVelocity = new Vector2(rb2D.linearVelocity.x, jumpForce);
             crearParticulaSalto();
+            AudioManager.instance.PlaySFX(AudioManager.instance.sfxPlayerJump);
         }
 
         jumpPressed = false;

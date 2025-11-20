@@ -23,7 +23,8 @@ public class SettingsMenu : MonoBehaviour
 
     public void SetMusic(float value)
     {
-        Debug.Log("Music set to: " + value);
+        if (AudioManager.instance != null)
+            AudioManager.instance.SetMusicVolume(value);
     }
 
     public void SetBrightness(float value)

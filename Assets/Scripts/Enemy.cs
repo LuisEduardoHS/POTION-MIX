@@ -19,6 +19,7 @@ public class Enemy : MonoBehaviour
     private bool inMovement;
     private Vector2 startPos;
     private float randomOffset;
+    private Vector3 originalScale;
 
     // --- VARIABLES DE ATAQUE ---
     [Header("Attack Settings")]
@@ -40,6 +41,8 @@ public class Enemy : MonoBehaviour
         startPos = transform.position;
         randomOffset = Random.Range(0f, 2f * Mathf.PI);
 
+        originalScale = transform.localScale;
+
         // 1. Busca al Player por Tag
         GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
 
@@ -59,11 +62,23 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        // El Animator está desactivado, así que comentamos esto:
-        animator.SetBool("InMovement", inMovement);
+        // 1. Primero, comprueba si la avispa está muerta.
+        if (muerto)
+        {
+            // Si está muerta, no hacer NADA.
+            inMovement = false;
+            rb.linearVelocity = Vector2.zero; // Asegurarse de que no se mueva
+            return; // Salir de la función Update() inmediatamente
+        }
 
-        // Llamamos a Movimiento() desde Update() para que sea consistente
-        Movimiento();
+        // 2. Si no está muerta Y el jugador está vivo, moverse.
+        if (playerVivo)
+        {
+            Movimiento();
+        }
+
+        // 3. La animación se actualiza después.
+        animator.SetBool("InMovement", inMovement);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -120,11 +135,11 @@ public class Enemy : MonoBehaviour
                 Attack();
             }
 
-            // 5. VOLTEAR SPRITE
             if (horizontalDirection < 0)
-                transform.localScale = new Vector3(-1, 1, 1);
+                transform.localScale = new Vector3(-originalScale.x, originalScale.y, originalScale.z);
             else if (horizontalDirection > 0)
-                transform.localScale = new Vector3(1, 1, 1);
+                transform.localScale = new Vector3(originalScale.x, originalScale.y, originalScale.z);
+
         }
         else if (playerVivo)
         {
@@ -136,9 +151,9 @@ public class Enemy : MonoBehaviour
             rb.linearVelocity = moveDir * (speed * 0.5f);
             inMovement = true;
             if (moveDir.x < -0.1f)
-                transform.localScale = new Vector3(-1, 1, 1);
+                transform.localScale = new Vector3(-originalScale.x, originalScale.y, originalScale.z);
             else if (moveDir.x > 0.1f)
-                transform.localScale = new Vector3(1, 1, 1);
+                transform.localScale = new Vector3(originalScale.x, originalScale.y, originalScale.z);
         }
         else
         {
@@ -169,8 +184,13 @@ public class Enemy : MonoBehaviour
 
         lastAttackTime = Time.time;
 
+        animator.SetTrigger("doAttack");
+
+        AudioManager.instance.PlaySFX(AudioManager.instance.sfxAvispaAttack);
+
         Vector2 direction = (player.position - stingerLaunchPoint.position).normalized;
         GameObject stingerObj = Instantiate(stingerPrefab, stingerLaunchPoint.position, Quaternion.identity);
+
         stingerObj.GetComponent<Stinger>().Launch(direction, GetComponent<Collider2D>());
 
         Debug.Log("¡AGUIJÓN DISPARADO!"); // LOG 10
@@ -188,18 +208,22 @@ public class Enemy : MonoBehaviour
 
     private void Muere()
     {
+        if (muerto) return;
+
         muerto = true;
         inMovement = false;
-        rb.linearVelocity = Vector2.zero;
-        // animator.SetTrigger("muerto"); // Animator está desactivado
+
+        animator.SetTrigger("doDie");
+
         GetComponent<Collider2D>().enabled = false;
+
+        rb.bodyType = RigidbodyType2D.Kinematic;
+        rb.linearVelocity = Vector2.zero;
 
         if (itemToDropOnDeath != null)
         {
             Instantiate(itemToDropOnDeath, transform.position, Quaternion.identity);
         }
-
-        Destroy(gameObject, 1f);
     }
 
     void OnDrawGizmosSelected()

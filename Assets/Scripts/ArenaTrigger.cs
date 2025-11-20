@@ -44,6 +44,7 @@ public class ArenaTrigger : MonoBehaviour
             if (wallToActivate != null)
             {
                 wallToActivate.SetActive(true);
+                AudioManager.instance.PlayMusic(AudioManager.instance.musicBoss);
                 Debug.Log("¡ARENA CERRADA!");
             }
 
